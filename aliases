@@ -1,0 +1,44 @@
+#!/bin/bash
+
+# Get week number
+alias week='date +%V'
+
+# IP addresses
+alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
+alias localip="ipconfig getifaddr en0"
+alias ips="ifconfig -a | grep -o 'inet6\? \(addr:\)\?\s\?\(\(\([0-9]\+\.\)\{3\}[0-9]\+\)\|[a-fA-F0-9:]\+\)' | awk '{ sub(/inet6? (addr:)? ?/, \"\"); print }'"
+alias ns="scutil --dns | grep 'nameserver\[[0-9]*\]'"
+
+# Print each PATH entry on a separate line
+alias path='echo -e ${PATH//:/\\n}'
+
+# Optimize gif, I'll figure out params later
+gifsmall() {gifsicle -i $1.gif -O3 --colors 128 --resize-fit-width 500 -o $1-op.gif;}
+
+# Change directories
+alias .="cd .."
+alias ..="cd ../.."
+alias ...="cd ../../.."
+alias ....="cd ../../../.."
+alias .....="cd ../../../../.."
+
+# Size of folders in current directory
+alias du1="du -d 1 --block-size=1M"
+
+# Git stuff
+alias g="cd /home/Documents/git"
+alias gs="git status"
+alias gl="git log"
+
+# History
+alias h="history"
+alias h1="history 10"
+alias h2="history 20"
+alias h3="history 30"
+alias hgrep='history | grep'
+
+# See if internet is working
+alias pg="ping google.com -c 5"
+
+# Simple HTTP server
+alias serve='python -m SimpleHTTPServer'
