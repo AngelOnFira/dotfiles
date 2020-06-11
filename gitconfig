@@ -10,7 +10,7 @@
     deleted = red
     untracked = yellow
 [push]
-    default = matching
+	default = simple
 [filter "lfs"]
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process

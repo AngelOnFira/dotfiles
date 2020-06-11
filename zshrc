@@ -18,6 +18,10 @@ export PATH="$HOME/software:$PATH"
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 
+# Deno
+export DENO_INSTALL="/home/forest/.deno"
+export PATH="$DENO_INSTALL/bin:$PATH"
+
 # Add tab completion for SSH hostnames based on ~/.ssh/config, ignoring wildcards
 h=()
 if [[ -r ~/.ssh/config ]]; then
@@ -33,3 +37,6 @@ fi
 
 # Aliases that probably don't work
 alias pth="echo \"export PATH=\$PATH:\$(pwd)\" >> ~/.zshrc; PATH=\$PATH:\$(pwd)"
+
+# Binaries
+export PATH="$HOME/Documents/binaries:$PATH"
