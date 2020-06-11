@@ -1,0 +1,34 @@
+Host aether
+    Hostname aidancrowther.com
+    User forest
+    
+Host fcompute
+    Hostname forest-compute-1
+    User forest
+    ProxyJump aether
+    
+Host io
+    Hostname home.forest-anderson.ca
+    User forest
+    Port 1234
+
+Host pan
+    Hostname pan
+    User forest
+    ProxyJump io
+
+Host sao
+    Hostname sao
+    User forest
+    ProxyJump io
+
+Host rhea
+    Hostname rhea
+    User forest
+    ProxyJump io
+    
+Host elections
+    Hostname 134.117.26.170
+    User student
+    IdentityFile ~/.ssh/id_rsa
+    ProxyCommand ssh forestanderson@access.scs.carleton.ca -W %h:%p
