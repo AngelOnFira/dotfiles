@@ -24,6 +24,7 @@ code --install-extension matklad.rust-analyzer
 code --install-extension ms-vsliveshare.vsliveshare
 code --install-extension eamodio.gitlens
 code --install-extension denoland.vscode-deno
+code --install-extension denoland.p1c2u.docker-compose
 
 # Oh my zsh
 yes | sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
