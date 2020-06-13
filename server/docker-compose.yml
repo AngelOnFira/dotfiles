@@ -9,14 +9,14 @@
 # 21206 - Ombi
 
 
-version: 3
+version: "3"
 services:
   portainer:
     image: portainer/portainer
     ports:
       - "21200:8000"
       - "21201:9000"
-    name: portainer
+    container_name: portainer
     volumes: 
       - "/var/run/docker.sock:/var/run/docker.sock"
       - "portainer_data:/data"
@@ -31,22 +31,21 @@ services:
       - "DUO_SKEY="
       - "DUO_HOST="
 
-  qbittorrent:
-    image: linuxserver/qbittorrent
-    container_name: qbittorrent
-    environment:
-      - PUID=1000
-      - PGID=1000
-      - TZ=Europe/London
-      - UMASK_SET=022
-      - WEBUI_PORT=8080
+  deluge:
+    image: binhex/arch-delugevpn
+    env_file: envfiles/sao-deluge-envfile
+    container_name: deluge
+    cap_add:
+      - NET_ADMIN
     ports:
-      - "6881:6881"
-      - "6881:6881/udp"
-      - "21202:8080"
+      - "8112:8112"
+      - "8118:8118"
+      - "58846:58846"
+      - "58946:58946"
     volumes:
-      - ./qbittorrent-config:/config
-      - ./downloads:/downloads
+      - ~/Downloads:/data
+      - ./config:/config
+      - /etc/localtime:/etc/localtime:ro
     restart: unless-stopped
 
   plex:
@@ -114,4 +113,4 @@ services:
     restart: unless-stopped
 
 volumes:
-  portainer_data
+  portainer_data:
