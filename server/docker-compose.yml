@@ -1,3 +1,14 @@
+# Ports
+#
+# 21200 - Portainer
+# 21201 - Portainer UI
+# 21202 - qbittorrent UI
+# 21203 - Sickrage
+# 21204 - Pihole
+# 21205 - Pihole HTTPS
+# 21206 - Ombi
+
+
 version: 3
 services:
   portainer:
@@ -19,6 +30,88 @@ services:
       - "DUO_IKEY="
       - "DUO_SKEY="
       - "DUO_HOST="
+
+  qbittorrent:
+    image: linuxserver/qbittorrent
+    container_name: qbittorrent
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Europe/London
+      - UMASK_SET=022
+      - WEBUI_PORT=8080
+    ports:
+      - "6881:6881"
+      - "6881:6881/udp"
+      - "21202:8080"
+    volumes:
+      - ./qbittorrent-config:/config
+      - ./downloads:/downloads
+    restart: unless-stopped
+
+  plex:
+    image: linuxserver/plex
+    container_name: plex
+    network_mode: host
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - VERSION=docker
+    volumes:
+      - /path/to/library:/config
+      - /path/to/tvseries:/tv
+      - /path/to/movies:/movies
+    restart: unless-stopped
+
+  sickrage:
+    image: linuxserver/sickrage
+    container_name: sickrage
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Europe/London
+    volumes:
+      - /path/to/appdata/config:/config
+      - /path/to/downloads:/downloads
+      - /path/to/tv/shows:/tv
+    ports:
+      - 21203:8081
+    restart: unless-stopped
+
+  pihole:
+    container_name: pihole
+    image: pihole/pihole:latest
+    ports:
+      - "53:53/tcp"
+      - "53:53/udp"
+      - "67:67/udp"
+      - "21204:80/tcp"
+      - "21205:443/tcp"
+    environment:
+      TZ: 'America/Toronto'
+    volumes:
+      - './etc-pihole/:/etc/pihole/'
+      - './etc-dnsmasq.d/:/etc/dnsmasq.d/'
+    dns:
+      - 1.1.1.1
+      - 1.0.0.1
+    cap_add:
+      - NET_ADMIN
+    restart: unless-stopped
+
+  ombi:
+    image: linuxserver/ombi
+    container_name: ombi
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Europe/London
+      - BASE_URL=/ombi #optional
+    volumes:
+      - /path/to/appdata/config:/config
+    ports:
+      - 21206:3579
+    restart: unless-stopped
 
 volumes:
   portainer_data
