@@ -18,9 +18,16 @@ export PATH="$HOME/software:$PATH"
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 
+# Poetry
+export PATH="$HOME/.poetry/bin:$PATH"
+
 # Deno
 export DENO_INSTALL="/home/forest/.deno"
 export PATH="$DENO_INSTALL/bin:$PATH"
+
+# Go
+export GOPATH=$HOME/go
+export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin
 
 # Add tab completion for SSH hostnames based on ~/.ssh/config, ignoring wildcards
 h=()
@@ -40,3 +47,5 @@ alias pth="echo \"export PATH=\$PATH:\$(pwd)\" >> ~/.zshrc; PATH=\$PATH:\$(pwd)"
 
 # Binaries
 export PATH="$HOME/Documents/binaries:$PATH"
+
+if [ -e /home/forest/.nix-profile/etc/profile.d/nix.sh ]; then . /home/forest/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer

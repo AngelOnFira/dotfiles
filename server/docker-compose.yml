@@ -112,5 +112,27 @@ services:
       - 21206:3579
     restart: unless-stopped
 
+  io-bastion:
+    image: cloudposse/bastion:latest
+    ports:
+      - "1234:22"
+    env_file: ../envfiles/io-bastion-envfile
+    volumes:
+      - "io-ssh-home:/home"
+      - "io-ssh-etc:/etc"
+    depends_on:
+      - io-auth
+
+  traefik:
+    image: traefik
+    ports:
+      - "80:80"
+      - "443:443"
+      - "8080:8080"
+    volumes:
+      - "./traefik.yml:/etc/traefik/traefik.yml"
+      - "/var/run/docker.sock:/var/run/docker.sock"
+
 volumes:
-  portainer_data:
+  io-ssh-home:
+  io-ssh-etc:

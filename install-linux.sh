@@ -11,6 +11,7 @@ eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 pyenv install 3.7.6
 pyenv install 2.7.18
+pyenv global 3.7.6
 
 # Deno
 curl -fsSL https://deno.land/x/install/install.sh | sh
@@ -25,6 +26,8 @@ code --install-extension ms-vsliveshare.vsliveshare
 code --install-extension eamodio.gitlens
 code --install-extension denoland.vscode-deno
 code --install-extension denoland.p1c2u.docker-compose
+code --install-extension ms-azuretools.vscode-docker
+
 
 # Oh my zsh
 yes | sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
@@ -34,9 +37,13 @@ mkdir -p ~/Documents/git
 mkdir -p ~/Documents/binaries
 
 # Docker Permissions
+sudo groupadd docker
 sudo usermod -aG docker $USER
 sudo systemctl enable docker
 sudo systemctl start docker
+
+# Shell
+chsh -s /bin/zsh forest
 
 # SSH
 ssh-keygen -b 4096 -t rsa
