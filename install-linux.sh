@@ -6,7 +6,7 @@ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
 # Python
 yes | sudo pacman -S --needed base-devel openssl zlib bzip2 readline sqlite curl llvm ncurses xz tk libffi python-pyopenssl git
 curl https://pyenv.run | bash
-export PATH="/home/forest/.pyenv/bin:$PATH"
+export PATH="/home/$USER/.pyenv/bin:$PATH"
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 pyenv install 3.7.6
@@ -43,7 +43,7 @@ sudo systemctl enable docker
 sudo systemctl start docker
 
 # Shell
-chsh -s /bin/zsh forest
+chsh -s /bin/zsh $USER
 
 # SSH
 ssh-keygen -b 4096 -t rsa
