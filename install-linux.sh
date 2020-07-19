@@ -20,13 +20,34 @@ curl -fsSL https://deno.land/x/install/install.sh | sh
 curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python
 
 # VS Code
-code --install-extension esbenp.prettier-vscode
+
+## Languages
 code --install-extension matklad.rust-analyzer
-code --install-extension ms-vsliveshare.vsliveshare
-code --install-extension eamodio.gitlens
 code --install-extension denoland.vscode-deno
 code --install-extension denoland.p1c2u.docker-compose
 code --install-extension ms-azuretools.vscode-docker
+code --install-extension bungcip.better-toml
+code --install-extension golang.go
+code --install-extension geequlim.godot-tools
+code --install-extension slevesque.shader
+code --install-extension ms-python.vscode-pylance
+
+## Tools
+code --install-extension esbenp.prettier-vscode
+code --install-extension eamodio.gitlens
+code --install-extension ms-vsliveshare.vsliveshare
+code --install-extension coenraads.bracket-pair-colorizer-2
+code --install-extension perkovec.emoji
+code --install-extension davidanson.vscode-markdownlint
+code --install-extension ms-vscode-remote.vscode-remote-extensionpack
+code --install-extension stkb.rewrap
+code --install-extension visualstudioexptteam.vscodeintellicode
+
+## Theme
+code --install-extension pkief.material-icon-theme
+code --install-extension azemoh.one-monokai
+
+
 
 
 # Oh my zsh
