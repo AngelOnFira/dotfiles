@@ -42,6 +42,7 @@ code --install-extension davidanson.vscode-markdownlint
 code --install-extension ms-vscode-remote.vscode-remote-extensionpack
 code --install-extension stkb.rewrap
 code --install-extension visualstudioexptteam.vscodeintellicode
+code --install-extension cbrevik.toggle-format-on-save
 
 ## Theme
 code --install-extension pkief.material-icon-theme
