@@ -18,6 +18,9 @@ export PATH="$HOME/software:$PATH"
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 
+# Rust
+export PATH="$HOME/.cargo/bin:$PATH"
+
 # Poetry
 export PATH="$HOME/.poetry/bin:$PATH"
 
@@ -28,6 +31,9 @@ export PATH="$DENO_INSTALL/bin:$PATH"
 # Go
 export GOPATH="$HOME/go"
 export PATH="$PATH:/usr/local/go/bin:$GOPATH/bin"
+
+# Ruby
+export PATH="/home/forest/.gem/ruby/2.7.0/bin:$PATH"
 
 # Add tab completion for SSH hostnames based on ~/.ssh/config, ignoring wildcards
 h=()

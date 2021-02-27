@@ -3,13 +3,29 @@
 # Rust
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
 
+## Cargo CLI tools
+cargo install bottom
+cargo install exa
+cargo install bat
+cargo install fd-find
+cargo install procs
+cargo install sd
+cargo install du-dust
+cargo install ripgrep
+cargo install tokei
+cargo install hyperfine
+cargo install ytop
+cargo install tealdeer
+cargo install bandwhich
+cargo install zoxide
+
 # Python
-yes | sudo pacman -S --needed base-devel openssl zlib bzip2 readline sqlite curl llvm ncurses xz tk libffi python-pyopenssl git
 curl https://pyenv.run | bash
 export PATH="/home/$USER/.pyenv/bin:$PATH"
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 pyenv install 3.7.6
+pyenv install 3.9.0
 pyenv install 2.7.18
 pyenv global 3.7.6
 
@@ -31,6 +47,7 @@ code --install-extension golang.go
 code --install-extension geequlim.godot-tools
 code --install-extension slevesque.shader
 code --install-extension ms-python.vscode-pylance
+code --install-extension ms-python.python
 
 ## Tools
 code --install-extension esbenp.prettier-vscode
@@ -47,9 +64,6 @@ code --install-extension cbrevik.toggle-format-on-save
 ## Theme
 code --install-extension pkief.material-icon-theme
 code --install-extension azemoh.one-monokai
-
-
-
 
 # Oh my zsh
 yes | sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
@@ -68,4 +82,8 @@ sudo systemctl start docker
 chsh -s /bin/zsh $USER
 
 # SSH
-ssh-keygen -b 4096 -t rsa
+ssh-keygen -b 4096 -t ed25519
+
+source install.sh
+
+tldr --update
