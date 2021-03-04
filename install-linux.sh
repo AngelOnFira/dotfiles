@@ -48,6 +48,7 @@ code --install-extension geequlim.godot-tools
 code --install-extension slevesque.shader
 code --install-extension ms-python.vscode-pylance
 code --install-extension ms-python.python
+code --install-extension hashicorp.terraform
 
 ## Tools
 code --install-extension esbenp.prettier-vscode
@@ -60,6 +61,7 @@ code --install-extension ms-vscode-remote.vscode-remote-extensionpack
 code --install-extension stkb.rewrap
 code --install-extension visualstudioexptteam.vscodeintellicode
 code --install-extension cbrevik.toggle-format-on-save
+
 
 ## Theme
 code --install-extension pkief.material-icon-theme

@@ -16,7 +16,9 @@ sudo pamac install --no-confirm \
     code \
     neofetch \
     dnsutils \
-    steam
+    steam \
+    terraform \
+    github-cli
 
 yes | sudo pacman -S --needed \
     base-devel \
