@@ -4,25 +4,40 @@
 yes | sudo pacman -Syyu
 
 sudo pamac install --no-confirm \
-    synergy \
-    git \
-    tmux \
-    zsh \
-    firefox \
+    aws-cli \
+    bandwhich \
+    bat \
+    bottom \
     discord \
+    dnsutils \
     docker \
     docker-compose \
-    vlc \
-    code \
-    neofetch \
-    dnsutils \
-    steam \
-    terraform \
+    dust \
+    exa \
+    fd \
+    firefox \
+    git \
     github-cli \
-    aws-cli \
-    graphviz \
     glances \
-    lld
+    graphviz \
+    hyperfine \
+    lld \
+    neofetch \
+    procs \
+    ripgrep \
+    sd \
+    steam \
+    synergy \
+    tealdeer \
+    terraform \
+    tmux \
+    tokei \
+    topgrade \
+    visual-studio-code-bin \
+    vlc \
+    ytop \
+    zola \
+    zoxide
 
 yes | sudo pacman -S --needed \
     base-devel \

@@ -1,24 +1,7 @@
 #!/bin/bash
 
 # Rust
-curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
-
-## Cargo CLI tools
-cargo install bottom
-cargo install exa
-cargo install bat
-cargo install fd-find
-cargo install procs
-cargo install sd
-cargo install du-dust
-cargo install ripgrep
-cargo install tokei
-cargo install hyperfine
-cargo install ytop
-cargo install tealdeer
-cargo install bandwhich
-cargo install zoxide
-cargo install topgrade
+curl --proto '=https' -sSf https://sh.rustup.rs | sh -s -- -y
 
 # Python
 curl https://pyenv.run | bash
@@ -68,8 +51,6 @@ code --install-extension cbrevik.toggle-format-on-save
 code --install-extension pkief.material-icon-theme
 code --install-extension azemoh.one-monokai
 
-# Oh my zsh
-yes | sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 # Folders
 mkdir -p ~/Documents/git
@@ -81,11 +62,12 @@ sudo usermod -aG docker $USER
 sudo systemctl enable docker
 sudo systemctl start docker
 
-# Shell
-chsh -s /bin/zsh $USER
-
 # SSH
-ssh-keygen -b 4096 -t ed25519
+sudo systemctl enable sshd
+sudo systemctl start sshd
+
+curl https://github.com/angelonfira.keys > ~/.ssh/authorized_keys
+
 
 source install.sh
 
