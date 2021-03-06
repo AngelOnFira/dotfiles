@@ -18,7 +18,11 @@ sudo pamac install --no-confirm \
     dnsutils \
     steam \
     terraform \
-    github-cli
+    github-cli \
+    aws-cli \
+    graphviz \
+    glances \
+    lld
 
 yes | sudo pacman -S --needed \
     base-devel \

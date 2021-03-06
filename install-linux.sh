@@ -18,6 +18,7 @@ cargo install ytop
 cargo install tealdeer
 cargo install bandwhich
 cargo install zoxide
+cargo install topgrade
 
 # Python
 curl https://pyenv.run | bash

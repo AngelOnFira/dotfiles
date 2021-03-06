@@ -18,8 +18,6 @@ sudo rm -rf ~/.config/alacritty > /dev/null 2>&1
 # Prepare folders and files
 #==============
 mkdir ~/.ssh -p
-mkdir ~/.config/fish -p
-mkdir ~/.config/alacritty -p
 
 #==============
 # Create symlinks in the home folder
@@ -28,8 +26,8 @@ mkdir ~/.config/alacritty -p
 ln -sf $dotfiles_dir/tmux/.tmux.conf ~/.tmux.conf
 ln -sf $dotfiles_dir/aliases ~/.aliases
 ln -sf $dotfiles_dir/gitconfig ~/.gitconfig
-ln -sf $dotfiles_dir/config/fish ~/.config/fish
-ln -sf $dotfiles_dir/config/alacritty ~/.config/alacritty
+ln -sf $dotfiles_dir/config/fish ~/.config
+ln -sf $dotfiles_dir/config/alacritty ~/.config
 ln -sf $dotfiles_dir/ssh/config ~/.ssh/config
 ln -sf $dotfiles_dir/env/.pam_environment ~/.pam_environment
 
