@@ -28,7 +28,9 @@ ln -sf $dotfiles_dir/aliases ~/.aliases
 ln -sf $dotfiles_dir/gitconfig ~/.gitconfig
 ln -sf $dotfiles_dir/config/fish ~/.config
 ln -sf $dotfiles_dir/config/alacritty ~/.config
+ln -sf $dotfiles_dir/config/kglobalshortcutsrc ~/.config/kglobalshortcutsrc
 ln -sf $dotfiles_dir/ssh/config ~/.ssh/config
 ln -sf $dotfiles_dir/env/.pam_environment ~/.pam_environment
+ln -sf $dotfiles_dir/env/.profile ~/.profile
 
 # git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm

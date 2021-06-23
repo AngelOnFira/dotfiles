@@ -28,24 +28,6 @@ function __history_previous_command
   end
 end
 
-function __history_previous_command_arguments
-  switch (commandline -t)
-  case "!"
-    commandline -t ""
-    commandline -f history-token-search-backward
-  case "*"
-    commandline -i '$'
-  end
-end
-
-if [ "$fish_key_bindings" = fish_vi_key_bindings ];
-  bind -Minsert ! __history_previous_command
-  bind -Minsert '$' __history_previous_command_arguments
-else
-  bind ! __history_previous_command
-  bind '$' __history_previous_command_arguments
-end
-
 
 ## Fish command history
 function history
@@ -54,19 +36,6 @@ end
 
 function backup --argument filename
     cp $filename $filename.bak
-end
-
-
-## Copy DIR1 DIR2
-function copy
-    set count (count $argv | tr -d \n)
-    if test "$count" = 2; and test -d "$argv[1]"
-	set from (echo $argv[1] | trim-right /)
-	set to (echo $argv[2])
-        command cp -r $from $to
-    else
-        command cp $argv
-    end
 end
 
 
@@ -185,12 +154,12 @@ export PATH="$HOME/Documents/binaries:$PATH"
 
 
 ## Import colorscheme from 'wal' asynchronously
-if type "wal" >> /dev/null 2>&1
-   cat ~/.cache/wal/sequences
-end
+# if type "wal" >> /dev/null 2>&1
+#    cat ~/.cache/wal/sequences
+# end
 
 
 ## Run paleofetch if session is interactive
-if status --is-interactive
-   paleofetch
-end
+# if status --is-interactive
+#   paleofetch
+# end

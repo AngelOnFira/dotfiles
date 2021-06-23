@@ -3,7 +3,7 @@
 # Software
 yes | sudo pacman -Syyu
 
-sudo pamac install --no-confirm \
+yes | sudo pacman -S \
     aws-cli \
     bandwhich \
     bat \
@@ -28,16 +28,16 @@ sudo pamac install --no-confirm \
     sd \
     steam \
     synergy \
-    tealdeer \
     terraform \
     tmux \
     tokei \
     topgrade \
     visual-studio-code-bin \
     vlc \
-    ytop \
-    zola \
-    zoxide
+    zola
+    #zoxide
+    #tealdeer \
+    #ytop \
 
 yes | sudo pacman -S --needed \
     base-devel \

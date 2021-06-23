@@ -10,7 +10,7 @@
 #  _or_ they can be KEY DEFAULT="VALUE" where VALUE can then have spaces
 #  KEY="VALUE" does _not_ work!
 
-EDITOR=nvim
+# EDITOR=nvim
 BROWSER=firefox-developer-edition
 NAME DEFAULT="Forest Anderson"
 EMAIL=forestkzanderson@gmail.com
@@ -18,18 +18,19 @@ EMAIL=forestkzanderson@gmail.com
 PATH DEFAULT=${PATH}:@{HOME}/bin
 PATH DEFAULT=${PATH}:@{HOME}/.cargo/bin
 PATH DEFAULT=${PATH}:@{HOME}/.local/bin
+PATH DEFAULT=${PATH}:@{HOME}/.poetry/bin
 
 # Globals
 TZ=America/Toronto
 
 # Environment-local
-CARGO_TARGET_DIR DEFAULT=@{HOME}/.cargo-target
-PATH DEFAULT=${PATH}:@{HOME}/.cargo-target/release/
+# CARGO_TARGET_DIR DEFAULT=@{HOME}/.cargo-target
+# PATH DEFAULT=${PATH}:@{HOME}/.cargo-target/release/
 
 # Rust stuff
-CARGO_INCREMENTAL=1
-RUSTFLAGS DEFAULT="-C target-cpu=native"
-RUST_BACKTRACE=1
+# CARGO_INCREMENTAL=1
+# RUSTFLAGS DEFAULT="-C target-cpu=native"
+# RUST_BACKTRACE=1
 
 # make less better
 # X = leave content on-screen
