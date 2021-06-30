@@ -30,5 +30,39 @@ Host rhea
 Host elections
     Hostname 134.117.26.170
     User student
-    IdentityFile ~/.ssh/id_rsa
     ProxyCommand ssh forestanderson@access.scs.carleton.ca -W %h:%p
+
+Host ccss-bastion
+    Hostname 134.117.26.169
+    User student
+    ProxyCommand ssh forestanderson@access.scs.carleton.ca -W %h:%p
+
+Host nomad-client-1
+    Hostname 192.168.30.120
+    User student
+    ProxyJump ccss-bastion
+
+Host nomad-client-2
+    Hostname 192.168.30.254
+    User student
+    ProxyJump ccss-bastion
+
+Host nomad-client-3
+    Hostname 192.168.30.209
+    User student
+    ProxyJump ccss-bastion
+
+Host nomad-server-1
+    Hostname 192.168.30.45
+    User student
+    ProxyJump ccss-bastion
+
+Host nomad-server-2
+    Hostname 192.168.30.42
+    User student
+    ProxyJump ccss-bastion
+
+Host nomad-server-3
+    Hostname 192.168.30.92
+    User student
+    ProxyJump ccss-bastion
