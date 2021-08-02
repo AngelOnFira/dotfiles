@@ -19,6 +19,8 @@ yes | sudo pacman -S \
     git \
     github-cli \
     glances \
+    gnome-keyring \
+    godot-mono-bin \
     graphviz \
     hyperfine \
     lld \
