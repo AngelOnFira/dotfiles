@@ -20,6 +20,7 @@ arch -arm64 brew install \
     starship \
     tealdeer \
     terraform \
+    tmux \
     tokei \
     topgrade \
     uutils-coreutils \
