@@ -7,6 +7,7 @@ arch -arm64 brew install \
     exa \
     fd \
     fish \
+    flameshot \
     gh \
     htop \
     hyperfine \
