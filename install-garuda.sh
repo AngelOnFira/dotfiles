@@ -9,9 +9,11 @@ yes | sudo pacman -S \
     bat \
     bottom \
     discord \
+    clang \
     dnsutils \
     docker \
     docker-compose \
+    peek \
     dust \
     exa \
     fd \
